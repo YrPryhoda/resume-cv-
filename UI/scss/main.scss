@@ -1,48 +1,89 @@
+$grey-color: rgb(218, 220, 222);
+$blue-color: rgb(54, 161, 216);
+$light-grey: rgb(239, 243, 244);
+
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
 .fixed {
   position: absolute;
 }
+
 .icon {
   min-width: 60px;
   align-content: stretch;
 }
+
+.details ul li {
+  list-style-type: "☑  ";
+}
+
 .main-block {
   display: flex;
   max-width: 900px;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   border: 3px solid rgb(161, 159, 159);
+
   .left-bar {
-    background-color: rgb(54, 161, 216);
+    background-color: $blue-color;
     flex-basis: 35%;
+
     .avatar-wrapper {
       position: relative;
+      overflow: hidden;
+
       .avatar {
         width: 100%;
       }
+
       .name-block {
         font-size: 1.7rem;
+        width: 100%;
+        background-color: rgba(46, 45, 45, 0.579);
         text-align: right;
-        font-weight: 800;
-        color: #ffffff;
+        font-weight: 700;
+        color: $light-grey;
         padding: 0.6rem;
         right: 0;
         bottom: 0;
-        text-shadow: black 2px 2px 3px;
+        text-shadow: black 2px -3px 2px;
+
+        .status {
+          font-size: 1.3rem;
+        }
       }
     }
+
     .contact-info-wrapper {
       color: #ffffff;
       padding: 1rem 1rem 1rem 0.5rem;
+
       .intro {
         display: flex;
         padding: 1rem 0;
+
         & p {
           text-align: justify;
         }
+
         .link a {
           display: block;
           padding: 0.3rem 0;
@@ -52,8 +93,10 @@
       }
       .social {
         padding: 1rem 0;
+
         section {
           display: flex;
+
           & > a {
             padding: 0.3rem 0;
             color: inherit;
@@ -62,18 +105,113 @@
           }
         }
       }
+
       .skills {
         padding: 1rem 0;
         display: flex;
-        .skill {
-          
-        }
       }
     }
   }
 
-
   .personal-info {
+    background-color: $grey-color;
     flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    align-content: center;
+
+    .experience {
+      display: flex;
+      background-color: $light-grey;
+      margin-bottom: 1.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .title {
+        border-bottom: 2px solid $grey-color;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .timelist {
+        padding: 1rem;
+        width: 100%;
+      }
+
+      .plans {
+        width: calc(100% - 5rem);
+        padding: 1rem 2rem;
+        ul li {
+          list-style-type: "\2600  ";
+        }
+      }
+    }
+  }
+  .details {
+    transition: all 1s;
+
+    div {
+      display: none;
+    }
+
+    #toggle-2::after,
+    #toggle-details::after {
+      content: "\1F782 ";
+      font-size: 1.1rem;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: rgb(239, 243, 244);
+    }
+
+    & > label.dropdown {
+      padding-left: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    & > input {
+      float: left;
+      border: none;
+      border-radius: 0;
+      width: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      vertical-align: top;
+      outline: none;
+    }
+
+    & > input:checked {
+      transform: rotate(90deg);
+    }
+
+    & > input:checked ~ div {
+      display: block;
+
+      & ul {
+        padding-left: 1.8rem;
+      }
+    }
+
+    & input:after {
+      content: "";
+      position: relative;
+      width: 0.5rem;
+      height: 0.7rem;
+      cursor: pointer;
+    }
+  }
+
+  .other-courses {
+    margin-bottom: 1rem;
+  }
+
+  .timelist-item {
+    padding: 0.5rem;
   }
 }

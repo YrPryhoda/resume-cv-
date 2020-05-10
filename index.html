@@ -40,10 +40,13 @@
     <link rel="me" href="tel:+380993837770" />
   </head>
   <body>
+    <div class="bg">
+      <img src="./UI/image/bg-13.svg" alt="background">
+    </div>
     <article class="main-block">
       <section class="left-bar">
         <div class="avatar-wrapper">
-          <img src="./UI/image/avatar.jpg" alt="my avatar" class="avatar" />
+          <img src="./UI/image/ava.jpg" alt="my avatar" class="avatar" />
           <div class="name-block fixed">
             <div class="name">
               <span> Ярослав Пригода </span>
@@ -157,17 +160,17 @@
         </div>
       </section>
       <section class="personal-info">
-        <div class="work-experience">
+        <div class="experience">
           <div class="icon"></div>
           <div class="timelist">
             <h2 class="title">Опыт работы</h2>
             <h3 class="subtitle">Системный администратор</h3>
             <p class="city">г. Днепр, Украина</p>
-            <p class="date"><em>2 августа</em> 2018 - сегодня</p>
-            <ul>
+            <p class="date">2 <em>августа</em> 2018 - <em>сегодня</em></p>
+            <ul">
               <li class="details">
-                <input type="checkbox" id="toggle-details" />
-                <label for="toggle-details">
+                <input type="checkbox" id="toggle-details" class="dropdown" />
+                <label for="toggle-details" class="dropdown">
                   Основные функциональные обязанности:
                 </label>
                 <div>
@@ -193,9 +196,9 @@
             </ul>
           </div>
         </div>
-        <div class="education">
+        <div class="experience">
           <div class="icon"></div>
-          <div class="timelist">
+          <div class="timelist details">
             <h2 class="title">Образование</h2>
             <section class="timelist-item">
               <h3 class="subtitle">Friends English Club</h3>
@@ -213,6 +216,9 @@
                 Обучение в Binary Studio Academy, направление Java Script
               </p>
             </section>
+            <input type="checkbox" name="courses dropdown" id="toggle-2">
+            <label for="toggle-2" class="dropdown">Другие образовательные курсы:</label>
+            <div>
             <section class="timelist-item">
               <h3 class="subtitle">Zenbit course</h3>
               <p class="city">онлайн</p>
@@ -273,6 +279,7 @@
                 Полный курс по JavaScript + React - с нуля до результата
               </p>
             </section>
+          </div>
             <section class="timelist-item">
               <h3 class="subtitle">НТУУ "Киевский Политехнический Институт"</h3>
               <p class="city">г. Киев, Украина</p>
@@ -295,17 +302,18 @@
             </section>
           </div>
         </div>
-        <div class="hobbies">
+        <div class="experience">
           <div class="icon"></div>
-          <div class="hobbies-info">
+          <div class="timelist">
             <h2 class="title">Увлечения</h2>
             <div class="hobbies-icons">
               1 2 3 4
             </div>
           </div>
         </div>
-        <div class="plans">
-          <div class="icon">
+        <div class="experience">
+          <div class="icon"></div>
+          <div class="plans">
             <h2 class="title">Планы и перспективы</h2>
             <ul>
               <li>Стать востребованым full stack developer'ом</li>
