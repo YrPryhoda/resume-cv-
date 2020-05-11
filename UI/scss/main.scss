@@ -1,0 +1,280 @@
+$grey-color: rgb(218, 220, 222);
+$blue-color: rgb(54, 161, 216);
+$light-grey: rgb(239, 243, 244);
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.fixed {
+  position: absolute;
+}
+
+.icon {
+  min-width: 60px;
+  align-content: stretch;
+  padding-right: 0.3rem;
+  text-align: center;
+  img {
+    width: 50px;
+    justify-self: center;
+  }
+}
+
+div.sm {
+  img {
+    width: 35px;
+  }
+}
+
+.details ul li {
+  list-style-type: "☑  ";
+}
+
+.main-block {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border: 3px solid rgb(161, 159, 159);
+
+  .left-bar {
+    background-color: $blue-color;
+    flex-basis: 35%;
+
+    .avatar-wrapper {
+      position: relative;
+      overflow: hidden;
+
+      .avatar {
+        width: 100%;
+      }
+
+      .name-block {
+        font-size: 1.7rem;
+        width: 100%;
+        background-color: rgba(46, 45, 45, 0.579);
+        text-align: right;
+        font-weight: 700;
+        color: $light-grey;
+        padding: 0.6rem;
+        right: 0;
+        bottom: 0;
+        text-shadow: black 2px -3px 2px;
+
+        .status {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .contact-info-wrapper {
+      color: #ffffff;
+      padding: 1rem 1rem 1rem 0.5rem;
+
+      .intro {
+        display: flex;
+        padding: 1rem 0;
+
+        & p {
+          text-align: justify;
+        }
+
+        .link {
+          align-self: center;
+          a {
+            display: block;
+            padding: 0.3rem 0;
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+      .social {
+        padding: 1rem 0;
+
+        section {
+          display: flex;
+
+          & > a {
+            align-self: center;
+            padding: 0.3rem 0;
+            color: inherit;
+            display: block;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .skills {
+        padding: 1rem 0;
+        display: flex;
+        & .skill > .rating-bar {
+          margin: 0.4rem 0;
+          height: 10px;
+          width: 100%;
+          border: 1px solid black;
+          background-color: white;
+          position: relative;
+          .stars {
+            background-color: rgb(238, 238, 1);
+            box-shadow: inset 0 0 4px #241e1e;
+            height: inherit;
+          }
+          .stars::after {
+            content: "\1F811";
+            color: black;
+            position: absolute;
+            font-size: 1.3rem;
+            padding: 0;
+            margin: 0;
+            top: -10px;
+            right: -16px;
+          }
+          .star-80 {
+            width: 80%;
+          }
+          .star-50 {
+            width: 50%;
+          }
+          .star-75 {
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  .personal-info {
+    background-color: $grey-color;
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    align-content: center;
+
+    .experience {
+      display: flex;
+      background-color: $light-grey;
+      margin-bottom: 1.6rem;
+
+      .top-1 {
+        padding-top: 1rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .title {
+        border-bottom: 2px solid $grey-color;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+
+      .timelist {
+        padding: 1rem;
+        width: 100%;
+
+        .padding-1 {
+          padding-left: 1rem;
+        }
+
+        .hobbies-icons {
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+
+      .plans {
+        width: calc(100% - 5rem);
+        padding: 1rem 2rem;
+        ul li {
+          list-style-type: "\2600  ";
+        }
+      }
+    }
+  }
+  .details {
+    div {
+      height: auto;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s, opacity 0.7s;
+    }
+
+    #toggle-2::after,
+    #toggle-details::after {
+      content: "\25B6 ";
+      font-size: 1rem;
+      display: block;
+      width: 10px;
+      height: 20px;
+      background-color: rgb(239, 243, 244);
+    }
+
+    & > label.dropdown {
+      padding-left: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    & > input {
+      float: left;
+      border: none;
+      border-radius: 0;
+      width: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      vertical-align: top;
+      outline: none;
+    }
+
+    & > input:checked {
+      transform: rotate(90deg);
+    }
+
+    & > input:checked ~ div {
+      max-height: 700px;
+      opacity: 1;
+      & ul {
+        padding-left: 1.8rem;
+      }
+    }
+
+    & input:after {
+      content: "";
+      position: relative;
+      width: 0.5rem;
+      height: 0.7rem;
+      cursor: pointer;
+    }
+  } 
+
+  .other-courses {
+    margin-bottom: 1rem;
+  }
+
+  .timelist-item {
+    padding: 0.5rem 0;
+  }
+}
