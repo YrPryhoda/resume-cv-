@@ -138,7 +138,7 @@ div.sm {
             height: inherit;
           }
           .stars::after {
-            content: "🡑";
+            content: "\1F811";
             color: black;
             position: absolute;
             font-size: 1.3rem;
@@ -222,10 +222,10 @@ div.sm {
 
     #toggle-2::after,
     #toggle-details::after {
-      content: "\1F782 ";
-      font-size: 1.1rem;
+      content: "\25B6 ";
+      font-size: 1rem;
       display: block;
-      width: 20px;
+      width: 10px;
       height: 20px;
       background-color: rgb(239, 243, 244);
     }
@@ -254,7 +254,7 @@ div.sm {
     }
 
     & > input:checked ~ div {
-      max-height: 400px;
+      max-height: 700px;
       opacity: 1;
       & ul {
         padding-left: 1.8rem;
@@ -268,13 +268,13 @@ div.sm {
       height: 0.7rem;
       cursor: pointer;
     }
-  }
+  } 
 
   .other-courses {
     margin-bottom: 1rem;
   }
 
   .timelist-item {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 }
