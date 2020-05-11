@@ -6,7 +6,7 @@ $light-grey: rgb(239, 243, 244);
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .bg {
   position: fixed;
@@ -28,6 +28,18 @@ $light-grey: rgb(239, 243, 244);
 .icon {
   min-width: 60px;
   align-content: stretch;
+  padding-right: 0.3rem;
+  text-align: center;
+  img {
+    width: 50px;
+    justify-self: center;
+  }
+}
+
+div.sm {
+  img {
+    width: 35px;
+  }
 }
 
 .details ul li {
@@ -84,11 +96,14 @@ $light-grey: rgb(239, 243, 244);
           text-align: justify;
         }
 
-        .link a {
-          display: block;
-          padding: 0.3rem 0;
-          text-decoration: none;
-          color: inherit;
+        .link {
+          align-self: center;
+          a {
+            display: block;
+            padding: 0.3rem 0;
+            text-decoration: none;
+            color: inherit;
+          }
         }
       }
       .social {
@@ -98,6 +113,7 @@ $light-grey: rgb(239, 243, 244);
           display: flex;
 
           & > a {
+            align-self: center;
             padding: 0.3rem 0;
             color: inherit;
             display: block;
@@ -109,6 +125,38 @@ $light-grey: rgb(239, 243, 244);
       .skills {
         padding: 1rem 0;
         display: flex;
+        & .skill > .rating-bar {
+          margin: 0.4rem 0;
+          height: 10px;
+          width: 100%;
+          border: 1px solid black;
+          background-color: white;
+          position: relative;
+          .stars {
+            background-color: rgb(238, 238, 1);
+            box-shadow: inset 0 0 4px #241e1e;
+            height: inherit;
+          }
+          .stars::after {
+            content: "🡑";
+            color: black;
+            position: absolute;
+            font-size: 1.3rem;
+            padding: 0;
+            margin: 0;
+            top: -10px;
+            right: -16px;
+          }
+          .star-80 {
+            width: 80%;
+          }
+          .star-50 {
+            width: 50%;
+          }
+          .star-75 {
+            width: 75%;
+          }
+        }
       }
     }
   }
@@ -126,6 +174,10 @@ $light-grey: rgb(239, 243, 244);
       background-color: $light-grey;
       margin-bottom: 1.6rem;
 
+      .top-1 {
+        padding-top: 1rem;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -139,6 +191,15 @@ $light-grey: rgb(239, 243, 244);
       .timelist {
         padding: 1rem;
         width: 100%;
+
+        .padding-1 {
+          padding-left: 1rem;
+        }
+
+        .hobbies-icons {
+          display: flex;
+          justify-content: space-around;
+        }
       }
 
       .plans {
@@ -151,10 +212,12 @@ $light-grey: rgb(239, 243, 244);
     }
   }
   .details {
-    transition: all 1s;
-
     div {
-      display: none;
+      height: auto;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s, opacity 0.7s;
     }
 
     #toggle-2::after,
@@ -191,8 +254,8 @@ $light-grey: rgb(239, 243, 244);
     }
 
     & > input:checked ~ div {
-      display: block;
-
+      max-height: 400px;
+      opacity: 1;
       & ul {
         padding-left: 1.8rem;
       }
