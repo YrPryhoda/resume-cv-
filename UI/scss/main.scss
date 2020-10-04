@@ -103,13 +103,17 @@ div.sm {
             padding: 0.3rem 0;
             text-decoration: none;
             color: inherit;
+
+            &:hover {
+              color: yellow;
+            }
           }
         }
       }
       .social {
         padding: 1rem 0;
 
-        section {
+        .social_wrap {
           display: flex;
 
           & > a {
@@ -118,6 +122,10 @@ div.sm {
             color: inherit;
             display: block;
             text-decoration: none;
+          }
+          
+          & > a:hover {
+            color: yellow;
           }
         }
       }
@@ -230,6 +238,10 @@ div.sm {
       background-color: rgb(239, 243, 244);
     }
 
+    .dropdown:hover {
+      color: grey;
+    }
+
     & > label.dropdown {
       padding-left: 1rem;
       font-weight: 500;
@@ -268,7 +280,7 @@ div.sm {
       height: 0.7rem;
       cursor: pointer;
     }
-  } 
+  }
 
   .other-courses {
     margin-bottom: 1rem;
